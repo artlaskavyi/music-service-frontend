@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User Profile Details">
+    <title>User Details - Music Service</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+    </head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo-text">MusicService</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="users.html" class="nav-link active">Users</a></li>
+                    <li><a href="/auth/logout" class="nav-link button button-outline">Logout</a></li>
+                </ul>
+            </nav>
+            </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <ol>
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="users.html">Users</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">User details</li>
+                </ol>
+            </nav>
+
+            <section class="user-details-section section">
+                <div class="section-header">
+                    <div class="user-avatar-large" aria-label="User Avatar">AU</div> <h1>User profile: adminuser</h1> </div>
+
+                <div class="detail-item">
+                    <span class="detail-label">Username:</span>
+                    <span class="detail-value">adminuser</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Email:</span>
+                    <span class="detail-value">admin@example.com</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Role:</span>
+                    <span class="detail-value"><span class="user-role admin">admin</span></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Joined date:</span>
+                    <span class="detail-value">january 15, 2024</span> </div>
+                <div class="detail-item">
+                    <span class="detail-label">Last login:</span>
+                    <span class="detail-value">may 28, 2025</span> </div>
+
+                <div class="actions-toolbar">
+                    <a href="edit-user.html?id=1" class="button button-primary">Edit user</a>
+                    <button type="button" class="button button-danger" id="delete-user-button">Delete user</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Music Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

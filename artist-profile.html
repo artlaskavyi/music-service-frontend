@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists - Music Service</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo-text">MusicService</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="genre-explorer.html" class="nav-link">Genres</a></li>
+                    <li><a href="#" class="nav-link active">Artists</a></li>
+                    <li><a href="/auth/logout" class="nav-link button button-outline">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <ol>
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Artists</li>
+                </ol>
+            </nav>
+
+            <article class="artist-profile-page section">
+                <!-- Pink Floyd -->
+                <section class="artist-section">
+                    <header class="artist-header">
+                        <img src="assets/images/artists/pink-floyd.png" alt="Pink Floyd" class="artist-avatar-xl" onerror="this.src='assets/images/placeholders/placeholder-artist.png'">
+                        <div class="artist-info-main">
+                            <h1 class="artist-name-large">Pink floyd</h1>
+                            <p class="artist-meta-info">
+                                <span class="artist-origin">London, England</span> •
+                                <span class="artist-active-years">Active since 1965</span> •
+                                <span class="artist-main-genre"><a href="genre-explorer.html?genre=rock">Progressive rock</a></span>
+                            </p>
+                        </div>
+                    </header>
+                    <section class="artist-bio">
+                        <h2>About pink floyd</h2>
+                        <p>Pink Floyd were an English rock band formed in London in 1965. Gaining a following as a psychedelic band, they were distinguished for their extended compositions, sonic experimentation, philosophical lyrics and elaborate live shows, and became a leading band of the progressive rock genre. They are one of the most commercially successful and influential groups in popular music history.</p>
+                        <p>Known for albums such as "The Dark Side of the Moon", "Wish You Were Here", and "The Wall".</p>
+                    </section>
+                    <section class="artist-discography">
+                        <h2>Discography</h2>
+                        <div class="card-grid">
+                            <article class="card album-card">
+                                <img src="assets/images/albums/dark-side-of-the-moon.png" alt="The Dark Side of the Moon" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-album.png'">
+                                <div class="card-content">
+                                    <h3 class="card-title">The dark side of the moon</h3>
+                                    <p class="card-subtitle">1973</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="album-details.html?id=1" class="button button-secondary">View album</a>
+                                </div>
+                            </article>
+                            <article class="card album-card">
+                                <img src="assets/images/albums/the-wall.png" alt="The Wall" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-album.png'">
+                                <div class="card-content">
+                                    <h3 class="card-title">The wall</h3>
+                                    <p class="card-subtitle">1979</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="album-details.html?id=2" class="button button-secondary">View album</a>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Iron Maiden -->
+                <section class="artist-section">
+                    <header class="artist-header">
+                        <img src="assets/images/artists/iron-maiden.png" alt="Iron Maiden" class="artist-avatar-xl" onerror="this.src='assets/images/placeholders/placeholder-artist.png'">
+                        <div class="artist-info-main">
+                            <h1 class="artist-name-large">Iron maiden</h1>
+                            <p class="artist-meta-info">
+                                <span class="artist-origin">London, England</span> •
+                                <span class="artist-active-years">Active since 1975</span> •
+                                <span class="artist-main-genre"><a href="genre-explorer.html?genre=heavy-metal">Heavy metal</a></span>
+                            </p>
+                        </div>
+                    </header>
+                    <section class="artist-bio">
+                        <h2>About iron maiden</h2>
+                        <p>Iron Maiden is a British heavy metal band known for their energetic performances, complex compositions, and mascot Eddie. They are pioneers of the New Wave of British Heavy Metal and have influenced countless bands in the genre.</p>
+                        <p>Known for albums such as "The Number of the Beast", "Powerslave", and "Seventh Son of a Seventh Son".</p>
+                    </section>
+                    <section class="artist-discography">
+                        <h2>Discography</h2>
+                        <div class="card-grid">
+                            <article class="card album-card">
+                                <img src="assets/images/albums/the-number-of-the-beast.png" alt="The Number of the Beast" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-album.png'">
+                                <div class="card-content">
+                                    <h3 class="card-title">The number of the beast</h3>
+                                    <p class="card-subtitle">1982</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="album-details.html?id=3" class="button button-secondary">View album</a>
+                                </div>
+                            </article>
+                            <article class="card album-card">
+                                <img src="assets/images/albums/powerslave.png" alt="Powerslave" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-album.png'">
+                                <div class="card-content">
+                                    <h3 class="card-title">Powerslave</h3>
+                                    <p class="card-subtitle">1984</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="album-details.html?id=4" class="button button-secondary">View album</a>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Lady Gaga -->
+                <section class="artist-section">
+                    <header class="artist-header">
+                        <img src="assets/images/artists/lady-gaga.png" alt="Lady Gaga" class="artist-avatar-xl" onerror="this.src='assets/images/placeholders/placeholder-artist.png'">
+                        <div class="artist-info-main">
+                            <h1 class="artist-name-large">Lady gaga</h1>
+                            <p class="artist-meta-info">
+                                <span class="artist-origin">New York, USA</span> •
+                                <span class="artist-active-years">Active since 2001</span> •
+                                <span class="artist-main-genre"><a href="genre-explorer.html?genre=pop">Pop</a></span>
+                            </p>
+                        </div>
+                    </header>
+                    <section class="artist-bio">
+                        <h2>About lady gaga</h2>
+                        <p>Lady Gaga is an American singer, songwriter, and actress known for her provocative lyrics, extravagant fashion, and versatile performances. She has redefined pop music with her unique style and powerful vocals.</p>
+                        <p>Known for albums such as "The Fame", "Born This Way", and "Artpop".</p>
+                    </section>
+                    <section class="artist-discography">
+                        <h2>Discography</h2>
+                        <div class="card-grid">
+                            <article class="card album-card">
+                                <img src="assets/images/albums/the-fame.png" alt="The Fame" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-album.png'">
+                                <div class="card-content">
+                                    <h3 class="card-title">The fame</h3>
+                                    <p class="card-subtitle">2008</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="album-details.html?id=5" class="button button-secondary">View album</a>
+                                </div>
+                            </article>
+                            <article class="card album-card">
+                                <img src="assets/images/albums/born-this-way.png" alt="Born This Way" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-album.png'">
+                                <div class="card-content">
+                                    <h3 class="card-title">Born this way</h3>
+                                    <p class="card-subtitle">2011</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="album-details.html?id=6" class="button button-secondary">View album</a>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Eminem -->
+                <section class="artist-section">
+                    <header class="artist-header">
+                        <img src="assets/images/artists/eminem.png" alt="Eminem" class="artist-avatar-xl" onerror="this.src='assets/images/placeholders/placeholder-artist.png'">
+                        <div class="artist-info-main">
+                            <h1 class="artist-name-large">Eminem</h1>
+                            <p class="artist-meta-info">
+                                <span class="artist-origin">Detroit, USA</span> •
+                                <span class="artist-active-years">Active since 1992</span> •
+                                <span class="artist-main-genre"><a href="genre-explorer.html?genre=hip-hop">Hip hop</a></span>
+                            </p>
+                        </div>
+                    </header>
+                    <section class="artist-bio">
+                        <h2>About eminem</h2>
+                        <p>Eminem is an American rapper, songwriter, and record producer known for his rapid-fire delivery, introspective lyrics, and controversial themes. He is one of the best-selling music artists of all time.</p>
+                        <p>Known for albums such as "The Marshall Mathers LP", "Recovery", and "The Eminem Show".</p>
+                    </section>
+                    <section class="artist-discography">
+                        <h2>Discography</h2>
+                        <div class="card-grid">
+                            <article class="card album-card">
+                                <img src="assets/images/albums/marshall-mathers-lp.png" alt="The Marshall Mathers LP" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-album.png'">
+                                <div class="card-content">
+                                    <h3 class="card-title">The marshall mathers lp</h3>
+                                    <p class="card-subtitle">2000</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="album-details.html?id=7" class="button button-secondary">View album</a>
+                                </div>
+                            </article>
+                            <article class="card album-card">
+                                <img src="assets/images/albums/recovery.png" alt="Recovery" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-album.png'">
+                                <div class="card-content">
+                                    <h3 class="card-title">Recovery</h3>
+                                    <p class="card-subtitle">2010</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="album-details.html?id=8" class="button button-secondary">View album</a>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </section>
+
+                <section class="related-artists-section">
+                    <h2>Related artists</h2>
+                    <div class="card-grid">
+                        <article class="card artist-card">
+                            <img src="assets/images/artists/king-crimson.png" alt="King Crimson" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-artist.png'">
+                            <div class="card-content">
+                                <h3 class="card-title">King crimson</h3>
+                                <p class="card-subtitle">Progressive rock</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="button button-secondary">View artist</a>
+                            </div>
+                        </article>
+                        <article class="card artist-card">
+                            <img src="assets/images/artists/judas-priest.png" alt="Judas Priest" class="card-image" onerror="this.src='assets/images/placeholders/placeholder-artist.png'">
+                            <div class="card-content">
+                                <h3 class="card-title">Judas priest</h3>
+                                <p class="card-subtitle">Heavy metal</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="button button-secondary">View artist</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Music Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

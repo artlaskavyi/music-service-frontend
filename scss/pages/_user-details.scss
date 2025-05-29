@@ -1,0 +1,52 @@
+// src/scss/pages/_user-details.scss
+@use '../abstracts/variables' as var;
+@use 'sass:color';
+
+.user-details-section {
+  background-color: var.$surface-color;
+  padding: var.$spacing-lg;
+  border-radius: var.$base-border-radius * 2;
+  max-width: 700px; // Or your preferred width
+  margin: 0 auto; // Center the details card
+
+  .detail-item {
+    margin-bottom: var.$spacing-md;
+    display: flex;
+    flex-wrap: wrap; // Allow wrapping for label/value pairs
+
+    .detail-label {
+      font-weight: 600;
+      color: var.$accent-purple-light;
+      min-width: 150px; // Ensures alignment
+      margin-bottom: var.$spacing-xs; // For small screens when they stack
+    }
+
+    .detail-value {
+      color: var.$text-light;
+      flex-grow: 1;
+    }
+  }
+
+    .user-avatar-large {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: color.adjust(var.$surface-color, $lightness: 10%);
+        border: 3px solid var.$primary-purple;
+        margin: 0 auto var.$spacing-lg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var.$accent-purple-light;    
+    }
+
+  .actions-toolbar {
+    margin-top: var.$spacing-lg;
+    padding-top: var.$spacing-lg;
+    border-top: 1px solid var.$border-color;
+    display: flex;
+    justify-content: flex-end; // Align buttons to the right
+    gap: var.$spacing-sm;
+  }
+}

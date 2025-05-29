@@ -1,0 +1,72 @@
+// scss/components/_buttons.scss
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:color';
+@use 'sass:math'; // Added to fix math.div error
+
+.button {
+  @include mix.button-base;
+  display: inline-block;
+  font-size: var.$base-font-size;
+
+  &.button-primary,
+  &:not([class*='button-']) {
+    background-color: var.$primary-purple;
+    color: var.$text-light;
+
+    &:hover {
+      background-color: color.adjust(var.$primary-purple, $lightness: 5%);
+    }
+    &:active {
+      background-color: color.adjust(var.$primary-purple, $lightness: -5%);
+    }
+  }
+
+  &.button-secondary {
+    background-color: var.$accent-purple-light;
+    color: var.$primary-black;
+
+    &:hover {
+      background-color: color.adjust(var.$accent-purple-light, $lightness: 5%);
+    }
+    &:active {
+      background-color: color.adjust(var.$accent-purple-light, $lightness: -5%);
+    }
+  }
+
+  &.button-outline {
+    background-color: transparent;
+    color: var.$accent-purple-light;
+    border: 2px solid var.$accent-purple-light;
+
+    &:hover {
+      background-color: var.$accent-purple-light;
+      color: var.$primary-black;
+    }
+  }
+
+  &.button-danger {
+    background-color: var.$error-color;
+    color: var.$text-light;
+
+    &:hover {
+      background-color: color.adjust(var.$error-color, $lightness: 5%);
+    }
+  }
+
+  &.button-icon {
+    background-color: transparent;
+    padding: math.div(var.$spacing-sm, 2); // Now works with sass:math imported
+    color: var.$text-muted;
+    border: none;
+
+    &:hover {
+      color: var.$accent-purple-light;
+      background-color: transparent;
+      transform: none;
+    }
+    i {
+      font-size: 1.2rem;
+    }
+  }
+}

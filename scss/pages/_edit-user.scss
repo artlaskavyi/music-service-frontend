@@ -1,0 +1,41 @@
+// src/scss/pages/_edit-user.scss
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+
+.edit-user-section {
+  // General styling for the edit user section, largely relies on .section from _main-content.scss
+  // and .auth-form or similar form styling from _forms.scss
+
+  .edit-user-form {
+    max-width: 600px; // Or your preferred width for this form
+    margin: 0 auto; // Center the form if it's narrower than the section
+
+    .form-group {
+      margin-bottom: var.$spacing-md;
+    }
+
+    label {
+      font-weight: 500;
+    }
+  }
+
+  .password-change-fieldset {
+    border: 1px solid var.$border-color;
+    padding: var.$spacing-md;
+    margin-top: var.$spacing-lg;
+    margin-bottom: var.$spacing-lg;
+    border-radius: var.$base-border-radius;
+
+    legend {
+      font-weight: 600;
+      padding: 0 var.$spacing-xs;
+      color: var.$accent-purple-light;
+      font-size: 1.1rem;
+    }
+  }
+
+  .form-actions {
+    // Styles already in _forms.scss, can be overridden if needed
+    justify-content: flex-end; // Align buttons to the right for edit forms often
+  }
+}

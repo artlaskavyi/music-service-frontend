@@ -1,0 +1,82 @@
+// src/scss/components/_navigation.scss
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+@use 'sass:math';
+@use 'sass:color'; // Added for color.adjust
+
+.breadcrumbs {
+  padding: var.$spacing-sm 0;
+  margin-bottom: var.$spacing-md;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+  .breadcrumb-item {
+    font-size: 0.9rem;
+    color: var.$text-muted;
+
+    a {
+      color: var.$accent-purple-light;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:not(:last-child)::after {
+      content: '/';
+      margin: 0 var.$spacing-xs;
+      color: var.$text-muted;
+    }
+  }
+
+  .breadcrumb-item.active {
+    color: var.$text-light;
+    font-weight: 500;
+  }
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var.$spacing-xs;
+  margin-top: var.$spacing-lg;
+  padding: 0;
+
+  .page-item {
+  }
+
+  .page-link {
+    display: block;
+    padding: math.div(var.$spacing-sm, 1.5) var.$spacing-sm;
+    min-width: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: var.$text-light;
+    background-color: var.$surface-color;
+    border: 1px solid var.$border-color;
+    border-radius: var.$base-border-radius;
+    transition: background-color var.$transition-speed-fast, color var.$transition-speed-fast;
+
+    &:hover {
+      background-color: var.$accent-purple-light;
+      color: var.$primary-black;
+      border-color: var.$accent-purple-light;
+    }
+  }
+
+  .page-item.active .page-link {
+    background-color: var.$primary-purple;
+    border-color: var.$primary-purple;
+    color: var.$text-light;
+    font-weight: bold;
+  }
+
+  .page-item.disabled .page-link {
+    color: var.$text-muted;
+    pointer-events: none;
+    background-color: color.adjust(var.$surface-color, $lightness: -5%); // Fix: Replaced darken
+  }
+}
