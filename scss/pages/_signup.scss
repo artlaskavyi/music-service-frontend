@@ -1,0 +1,32 @@
+// src/scss/pages/_signup.scss
+@use '../abstracts/variables' as var;
+
+// Similar to _login.scss, .auth-form from _forms.scss covers most styling.
+// Add signup-page specific overrides here.
+
+.signup-page-container {
+  min-height: calc(100vh - #{var.$spacing-lg * 2});
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var.$spacing-lg 0;
+
+  .auth-form-title {
+    text-align: center;
+    color: var.$accent-purple-light;
+    font-size: 2rem;
+    margin-bottom: var.$spacing-lg;
+  }
+
+   .alternative-action-link { // For "Already have an account? Login"
+    text-align: center;
+    margin-top: var.$spacing-md;
+    a {
+      color: var.$accent-purple-light;
+      font-weight: 500;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album: The Dark Side of the Moon - Music Service</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo-text">MusicService</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="genre-explorer.html" class="nav-link">Genres</a></li>
+                    <li><a href="artist-profile.html" class="nav-link">Artists</a></li>
+                    <li><a href="/auth/logout" class="nav-link button button-outline">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <ol>
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="genre-explorer.html">Genres</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">The dark side of the moon</li>
+                </ol>
+            </nav>
+
+            <article class="album-details-page section">
+                <header class="album-header">
+                    <div class="album-cover-art-large">
+                        <img src="assets/images/albums/dark-side-of-the-moon.png" alt="Album Cover: The Dark Side of the Moon" onerror="this.src='assets/images/placeholders/placeholder-album.png'">
+                    </div>
+                    <div class="album-info">
+                        <h1 class="album-title">The dark side of the moon</h1>
+                        <h2 class="artist-name"><a href="artist-profile.html?id=1">Pink floyd</a></h2>
+                        <p class="album-meta">
+                            <span class="release-year">1973</span> •
+                            <span class="genre-tags"><a href="#">Progressive rock</a>, <a href="#">Art rock</a></span> •
+                            <span class="track-count">10 tracks</span>
+                        </p>
+                        <div class="album-actions">
+                            <button class="button button-primary"><i class="icon-play"></i> Play album</button>
+                            <button class="button button-secondary"><i class="icon-add-playlist"></i> Add to playlist</button>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="track-list-section">
+                    <h3>Tracklist</h3>
+                    <ol class="track-list">
+                        <li class="track-item">
+                            <span class="track-number">1.</span>
+                            <span class="track-title">Speak to me</span>
+                            <span class="track-duration">1:05</span>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-number">2.</span>
+                            <span class="track-title">Breathe (in the air)</span>
+                            <span class="track-duration">2:49</span>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-number">3.</span>
+                            <span class="track-title">On the run</span>
+                            <span class="track-duration">3:35</span>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-number">4.</span>
+                            <span class="track-title">Time</span>
+                            <span class="track-duration">7:06</span>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-number">5.</span>
+                            <span class="track-title">The great gig in the sky</span>
+                            <span class="track-duration">4:44</span>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-number">6.</span>
+                            <span class="track-title">Money</span>
+                            <span class="track-duration">6:22</span>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-number">7.</span>
+                            <span class="track-title">us and them</span>
+                            <span class="track-duration">7:49</span>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-number">8.</span>
+                            <span class="track-title">Any colour you like</span>
+                            <span class="track-duration">3:25</span>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-number">9.</span>
+                            <span class="track-title">Brain damage</span>
+                            <span class="track-duration">3:50</span>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-number">10.</span>
+                            <span class="track-title">Eclipse</span>
+                            <span class="track-duration">2:04</span>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="album-reviews-section">
+                    <h3>Ratings & reviews</h3>
+                    <div class="current-rating">
+                        Average Rating: <span class="rating-stars">★★★★☆</span> (4.5/5 based on 1200 ratings)
+                    </div>
+                    <form class="review-form">
+                        <h4>Add your review</h4>
+                        <div class="form-group">
+                            <label for="rating">Your rating (1-5):</label>
+                            <input type="number" id="rating" name="rating" min="1" max="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="review_text">Your review:</label>
+                            <textarea id="review_text" name="review_text" rows="4" placeholder="what did you think of this album?"></textarea>
+                        </div>
+                        <button type="submit" class="button button-primary">Submit review</button>
+                    </form>
+                    <div class="reviews-list">
+                        <article class="review-card">
+                            <p class="review-author">musiclover99 <span class="review-rating">★★★★★</span></p>
+                            <p class="review-text">an absolute masterpiece! timeless classic that everyone should listen to.</p>
+                            <p class="review-date">Posted on: may 20, 2025</p>
+                        </article>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Music Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign Up for Music Service">
+    <title>Signup - Music Service</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+    <div class="signup-page-container">
+        <header class="site-header auth-header">
+            <div class="container">
+                 <a href="index.html" class="logo-text">MusicService</a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <form action="/auth/signup" method="POST" class="auth-form">
+                    <h1 class="auth-form-title">Create account</h1>
+                     <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required placeholder="Choose a username">
+                        </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your-email@example.com">
+                        </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Create a strong password">
+                        </div>
+
+                    <div class="form-group">
+                        <label for="passwordcon">Confirm password</label>
+                        <input type="password" id="passwordcon" name="passwordcon" required placeholder="Confirm your password">
+                        </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="button button-primary">Sign up</button>
+                    </div>
+                    <p class="alternative-action-link">already have an account? <a href="login.html">Log in here</a></p>
+                </form>
+            </div>
+        </main>
+        <footer class="site-footer auth-footer">
+            <div class="container">
+                <p>&copy; 2025 Music Service. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

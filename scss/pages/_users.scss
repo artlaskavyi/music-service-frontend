@@ -1,0 +1,89 @@
+// src/scss/pages/_users.scss
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+@use 'sass:math'; // Added to fix math.div error
+@use 'sass:color'; // Added for potential color.adjust usage
+
+.users-section {
+  .user-list-container {
+    overflow-x: auto;
+  }
+
+  table.user-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: var.$spacing-md;
+    background-color: var.$surface-color;
+    border-radius: var.$base-border-radius;
+    box-shadow: 0 2px 5px rgba(var.$primary-black, 0.2);
+
+    th, td {
+      padding: var.$spacing-sm var.$spacing-md;
+      text-align: left;
+      vertical-align: middle;
+      border-bottom: 1px solid var.$border-color;
+    }
+
+    th {
+      background-color: color.adjust(var.$surface-color, $lightness: -5%); // Fix: Replaced darken
+      color: var.$accent-purple-light;
+      font-weight: 600;
+      &:first-child {
+        border-top-left-radius: var.$base-border-radius;
+      }
+      &:last-child {
+        border-top-right-radius: var.$base-border-radius;
+      }
+    }
+
+    tbody tr {
+      transition: background-color var.$transition-speed-fast;
+      &:hover {
+        background-color: color.adjust(var.$surface-color, $lightness: 5%); // Fix: Replaced lighten
+      }
+      &:last-child td {
+        border-bottom: none;
+        &:first-child {
+          border-bottom-left-radius: var.$base-border-radius;
+        }
+        &:last-child {
+          border-bottom-right-radius: var.$base-border-radius;
+        }
+      }
+    }
+
+    .user-role {
+      padding: math.div(var.$spacing-xs, 2) var.$spacing-xs; // Now works with sass:math
+      border-radius: var.$base-border-radius;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-block;
+
+      &.admin {
+        background-color: var.$primary-purple;
+        color: var.$text-light;
+      }
+      &.regular {
+        background-color: var.$accent-purple-light;
+        color: var.$primary-black;
+      }
+    }
+
+    .actions-cell {
+      display: flex;
+      gap: var.$spacing-xs;
+      .button {
+        padding: math.div(var.$spacing-xs, 1.5) var.$spacing-xs;
+        font-size: 0.85rem;
+      }
+      .button-icon i {
+        margin-right: math.div(var.$spacing-xs, 2);
+      }
+    }
+  }
+}
+
+#create-user-modal {
+}

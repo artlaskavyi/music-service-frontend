@@ -1,0 +1,58 @@
+// src/scss/components/_modals.scss
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+
+.modal {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var.$primary-black, 0.7); // Semi-transparent overlay
+  @include mixin.flex-center;
+  z-index: 1000; // Ensure it's on top
+  padding: var.$spacing-md; // Padding for smaller screens
+
+  .modal-content {
+    background-color: var.$surface-color;
+    padding: var.$spacing-lg;
+    border-radius: var.$base-border-radius * 2;
+    width: 100%;
+    max-width: 500px; // Max width of the modal
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    position: relative; // For positioning close button
+    // Add animation for entry/exit later
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var.$spacing-md;
+    padding-bottom: var.$spacing-sm;
+    border-bottom: 1px solid var.$border-color;
+
+    h2 { // Or other heading elements
+      margin-bottom: 0;
+      color: var.$accent-purple-light;
+    }
+  }
+
+  .modal-close-button,
+  .modal-cancel-button {
+    &.modal-close-button {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: var.$text-muted;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+
+        &:hover {
+            color: var.$text-light;
+        }
+    }
+  }
+}

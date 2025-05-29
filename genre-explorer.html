@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Genres - Music Service</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo-text">MusicService</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="genre-explorer.html" class="nav-link active">Genres</a></li>
+                    <li><a href="#" class="nav-link">artists</a></li>
+                    <li><a href="/auth/logout" class="nav-link button button-outline">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="genre-explorer-page section">
+                <header class="page-header">
+                    <h1>Explore music genres</h1>
+                </header>
+
+                <div class="genre-list card-grid">
+                    <article class="genre-card card">
+                        <div class="card-content">
+                            <h2 class="genre-card-title">Progressive rock</h2>
+                            <p class="genre-description">Characterized by long compositions, concept albums, and complex instrumentation.</p>
+                            <a href="genre-details.html?name=progressive-rock" class="button button-primary">explore genre</a>
+                        </div>
+                    </article>
+                    <article class="genre-card card">
+                        <div class="card-content">
+                            <h2 class="genre-card-title">Jazz fusion</h2>
+                            <p class="genre-description">Blends jazz improvisation with rock rhythms, electric instruments, and funk.</p>
+                            <a href="genre-details.html?name=jazz-fusion" class="button button-primary">explore genre</a>
+                        </div>
+                    </article>
+                    <article class="genre-card card">
+                        <div class="card-content">
+                            <h2 class="genre-card-title">Ambient electronica</h2>
+                            <p class="genre-description">Focuses on atmospheric textures and soundscapes, often instrumental.</p>
+                            <a href="genre-details.html?name=ambient-electronica" class="button button-primary">explore genre</a>
+                        </div>
+                    </article>
+                    <div class="genre-list card-grid">
+                    <article class="genre-card card">
+                        <div class="card-content">
+                            <h2 class="genre-card-title">Heavy metal</h2>
+                            <p class="genre-description">Loud, aggressive sound with theatrical elements.</p>
+                            <a href="genre-details.html?name=heavy-metal" class="button button-primary">explore genre</a>
+                        </div>
+                    </article>
+                    <article class="genre-card card">
+                        <div class="card-content">
+                            <h2 class="genre-card-title">Pop</h2>
+                            <p class="genre-description">Catchy melodies and broad appeal.</p>
+                            <a href="genre-details.html?name=pop" class="button button-primary">explore genre</a>
+                        </div>
+                    </article>
+                    <article class="genre-card card">
+                        <div class="card-content">
+                            <h2 class="genre-card-title">Hip hop</h2>
+                            <p class="genre-description">Rhythmic beats and lyrical storytelling.</p>
+                            <a href="genre-details.html?name=hip-hop" class="button button-primary">explore genre</a>
+                        </div>
+                    </article>
+                    </div>
+                </div>
+
+                <section class="selected-genre-details section" id="selected-genre-progressive-rock" style="display: none;">
+                    <h2>progressive rock</h2>
+                    <div class="sub-genres-section">
+                        <h3>sub-genres</h3>
+                        <div class="sub-genre-chip-list">
+                            <a href="#" class="sub-genre-chip">symphonic prog</a>
+                            <a href="#" class="sub-genre-chip">canterbury scene</a>
+                            <a href="#" class="sub-genre-chip">krautrock</a>
+                            <a href="#" class="sub-genre-chip">space rock</a>
+                        </div>
+                    </div>
+                    <div class="genre-albums-section">
+                        <h3>popular albums in progressive rock</h3>
+                        <div class="card-grid">
+                            <article class="card album-card">
+                                <img src="asseets/images/albums/dark-side-of-the-moon.png" alt="The Dark Side of the Moon" class="card-image">
+                                <div class="card-content">
+                                    <h3 class="card-title">the dark side of the moon</h3>
+                                    <p class="card-subtitle">pink floyd</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="album-details.html?id=1" class="button button-secondary">view album</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Music Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

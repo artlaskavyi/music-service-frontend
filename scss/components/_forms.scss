@@ -1,0 +1,97 @@
+// src/scss/components/_forms.scss
+@use '../abstracts/variables' as var;
+
+.form-group {
+  margin-bottom: var.$spacing-md;
+}
+
+label {
+  display: block;
+  margin-bottom: var.$spacing-xs;
+  font-weight: 500;
+  color: var.$text-light;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  padding: var.$spacing-sm;
+  border: 1px solid var.$border-color;
+  border-radius: var.$base-border-radius;
+  background-color: var.$background-dark-secondary;
+  color: var.$text-light;
+  font-size: var.$base-font-size;
+  transition: border-color var.$transition-speed-fast var.$transition-timing-function,
+              box-shadow var.$transition-speed-fast var.$transition-timing-function;
+
+  &:focus {
+    outline: none;
+    border-color: var.$primary-purple;
+    box-shadow: 0 0 0 2px rgba(var.$primary-purple, 0.3);
+  }
+
+  // Placeholder text styling
+  &::placeholder {
+    color: var.$text-muted;
+    opacity: 1; // Firefox
+  }
+}
+
+select {
+  appearance: none; // Basic reset for custom arrow
+  // Add custom arrow styles later if needed
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-actions {
+  margin-top: var.$spacing-lg;
+  display: flex; // For button alignment
+  gap: var.$spacing-sm; // Space between buttons
+}
+
+// For your existing auth forms
+.auth-form {
+  max-width: 400px;
+  margin: var.$spacing-xl auto;
+  padding: var.$spacing-lg;
+  background-color: var.$surface-color;
+  border-radius: var.$base-border-radius * 2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+  h1, h2 { // Assuming you have a title inside or above the form
+    text-align: center;
+    color: var.$accent-purple-light;
+    margin-bottom: var.$spacing-lg;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
+
+// Validation error styling
+.validation-error-message {
+  display: block;
+  color: var.$error-color;
+  font-size: 0.875rem; // 14px
+  margin-top: var.$spacing-xs;
+}
+
+input.input-error,
+select.input-error,
+textarea.input-error {
+  border-color: var.$error-color;
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(var.$error-color, 0.3);
+  }
+}

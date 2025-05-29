@@ -1,0 +1,207 @@
+// src/scss/pages/_album-details.scss
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+@use 'sass:color';
+
+.album-details-page {
+  // Main container for the album details, relies on .section styling
+
+  .album-header {
+    display: flex;
+    flex-direction: column;
+    gap: var.$spacing-lg;
+    margin-bottom: var.$spacing-xl;
+    padding-bottom: var.$spacing-lg;
+    border-bottom: 1px solid var.$border-color;
+
+    @include mixin.respond-to(md) {
+      flex-direction: row;
+      align-items: flex-start; // Align items to the top
+    }
+  }
+
+  .album-cover-art-large {
+    flex-shrink: 0;
+    width: 100%; // Full width on small screens
+    max-width: 300px; // Max width for cover art
+    height: auto; // Maintain aspect ratio
+    aspect-ratio: 1 / 1;
+    margin: 0 auto; // Center on small screens
+
+    @include mixin.respond-to(md) {
+      width: 250px; // Fixed size on larger screens
+      height: 250px;
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var.$base-border-radius * 2;
+      box-shadow: 0 4px 15px rgba(var.$primary-black, 0.4);
+    }
+  }
+
+  .album-info {
+    flex-grow: 1;
+    text-align: center;
+
+    @include mixin.respond-to(md) {
+      text-align: left;
+    }
+
+    .album-title {
+      font-size: 2.5rem; // Large title
+      color: var.$accent-purple-light;
+      margin-bottom: var.$spacing-xs;
+    }
+
+    .artist-name {
+      font-size: 1.5rem;
+      color: var.$text-light;
+      margin-bottom: var.$spacing-sm;
+      a {
+        color: inherit;
+        &:hover {
+          color: var.$accent-purple-light;
+        }
+      }
+    }
+
+    .album-meta {
+      font-size: 0.95rem;
+      color: var.$text-muted;
+      margin-bottom: var.$spacing-md;
+
+      span {
+        margin-right: var.$spacing-xs;
+        &:not(:last-child)::after {
+          content: '•';
+          margin-left: var.$spacing-xs;
+        }
+      }
+      .genre-tags a {
+          color: var.$text-muted;
+          &:hover {
+              color: var.$accent-purple-light;
+              text-decoration: underline;
+          }
+      }
+    }
+
+    .album-actions {
+      display: flex;
+      gap: var.$spacing-sm;
+      justify-content: center;
+      @include mixin.respond-to(md) {
+        justify-content: flex-start;
+      }
+      .button i { // Assuming icon font usage
+          margin-right: var.$spacing-xs;
+      }
+    }
+  }
+
+  .track-list-section,
+  .album-reviews-section {
+    margin-top: var.$spacing-xl;
+    h3 {
+      font-size: 1.8rem;
+      color: var.$accent-purple-light;
+      margin-bottom: var.$spacing-md;
+      padding-bottom: var.$spacing-sm;
+      border-bottom: 1px solid var.$border-color;
+    }
+  }
+
+  .track-list {
+    list-style: none;
+    padding: 0;
+
+    .track-item {
+      display: flex;
+      align-items: center;
+      padding: var.$spacing-sm;
+      border-bottom: 1px solid var.$border-color;
+      transition: background-color var.$transition-speed-fast;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover, &.playing {
+        background-color: color.adjust(var.$surface-color, $lightness: 5%);
+    }
+      &.playing {
+        .track-title, .track-number {
+            color: var.$primary-purple;
+            font-weight: 600;
+        }
+      }
+
+      .track-number {
+        color: var.$text-muted;
+        min-width: 30px;
+      }
+      .track-title {
+        flex-grow: 1;
+        color: var.$text-light;
+      }
+      .track-duration {
+        color: var.$text-muted;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .album-reviews-section {
+    .current-rating {
+      margin-bottom: var.$spacing-md;
+      font-size: 1.1rem;
+      .rating-stars { // Placeholder for star icons
+        color: var.$warning-color; // Yellow for stars
+        font-size: 1.3rem;
+      }
+    }
+    .review-form {
+        background-color: color.adjust(var.$surface-color, $lightness: 5%);
+        padding: var.$spacing-md;
+        border-radius: var.$base-border-radius;
+        margin-bottom: var.$spacing-lg;
+        h4 {
+            margin-top: 0;
+            margin-bottom: var.$spacing-md;
+            color: var.$text-light;
+        }
+    }
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: var.$spacing-md;
+    }
+    .review-card {
+      background-color: color.adjust(var.$surface-color, $lightness: 5%);
+      padding: var.$spacing-md;
+      border-radius: var.$base-border-radius;
+      .review-author {
+        font-weight: 600;
+        color: var.$text-light;
+        margin-bottom: var.$spacing-xs;
+        .review-rating { // Placeholder for stars
+            color: var.$warning-color;
+            margin-left: var.$spacing-xs;
+        }
+      }
+      .review-text {
+        color: var.$text-muted;
+        line-height: 1.5;
+        margin-bottom: var.$spacing-xs;
+      }
+      .review-date {
+        font-size: 0.85rem;
+        color: color.adjust(var.$text-muted, $lightness: -10%);
+      }
+    }
+  }
+}

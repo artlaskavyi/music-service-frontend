@@ -1,0 +1,54 @@
+// src/scss/base/_base.scss
+@use '../abstracts/variables' as var; // Use 'var' as namespace
+
+html {
+  box-sizing: border-box;
+  font-size: 100%; // Typically 16px
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var.$base-font-family, sans-serif;
+  font-size: var.$base-font-size;
+  line-height: var.$base-line-height;
+  background-color: var.$background-dark-primary;
+  color: var.$text-light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; // Removes bottom space under images
+}
+
+a {
+  color: var.$link-color;
+  text-decoration: none;
+  transition: color var.$transition-speed-fast var.$transition-timing-function;
+
+  &:hover {
+    color: var.$link-hover-color;
+    text-decoration: underline;
+  }
+  &:active {
+    color: var.$link-active-color;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px; // Or your preferred max width
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var.$spacing-md;
+  padding-right: var.$spacing-md;
+}

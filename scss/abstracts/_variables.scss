@@ -1,0 +1,61 @@
+// scss/abstracts/_variables.scss
+@use 'sass:color'; // Import the SASS color module
+
+// Theme Colors (Purple and Black)
+$primary-purple: #6200ea;
+$primary-black: #0d0d0d;
+$accent-purple-light: #ab47bc;
+$accent-purple-dark: #3700b3;
+
+// Text Colors
+$text-light: #e0e0e0;
+$text-dark: $primary-black;
+$text-muted: #8e8e8e;
+
+// Background Colors
+$background-dark-primary: $primary-black;
+$background-dark-secondary: #1a1a1a;
+
+// Surface Colors
+$surface-color: #212121;
+$border-color: #444;
+
+// Feedback Colors
+$error-color: #e53935;
+$success-color: #43a047;
+$warning-color: #fdd835;
+
+// Link Colors
+$link-color: $accent-purple-light;
+$link-hover-color: color.adjust($accent-purple-light, $lightness: 10%); // Formerly lighten()
+$link-active-color: color.adjust($accent-purple-light, $lightness: -5%); // Formerly darken()
+
+// Fonts
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$base-font-family: $font-family-sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.6;
+
+// Spacing
+$spacing-unit: 8px;
+$spacing-xs: $spacing-unit;
+$spacing-sm: $spacing-unit * 2;
+$spacing-md: $spacing-unit * 3;
+$spacing-lg: $spacing-unit * 4;
+$spacing-xl: $spacing-unit * 6;
+
+// Borders
+$base-border-radius: 4px;
+$base-border: 1px solid $border-color;
+
+// Transitions
+$transition-speed-fast: 0.15s;
+$transition-speed-normal: 0.3s;
+$transition-timing-function: ease-in-out;
+
+// Breakpoints for responsive design
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

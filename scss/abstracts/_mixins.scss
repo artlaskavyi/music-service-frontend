@@ -1,0 +1,57 @@
+// scss/abstracts/_mixins.scss
+@use 'sass:math'; // For math.div and other math functions
+@use './variables' as var; // If your mixins use variables
+
+// Mixin for responsive design breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: var.$breakpoint-sm) { @content; } // Use var.$ to access variable
+  } @else if $breakpoint == md {
+    @media (min-width: var.$breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: var.$breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: var.$breakpoint-xl) { @content; }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not recognized.";
+  }
+}
+
+// Mixin for centering elements with flexbox
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Mixin for common button styling
+@mixin button-base {
+  padding: var.$spacing-sm math.div(var.$spacing-md, 1.5); // Use math.div and var.$
+  border: none;
+  border-radius: var.$base-border-radius;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color var.$transition-speed-normal var.$transition-timing-function,
+              transform var.$transition-speed-fast var.$transition-timing-function;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Mixin for truncation (single line)
+@mixin truncate-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

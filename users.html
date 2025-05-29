@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Music Service</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo-text">MusicService</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="/auth/logout" class="nav-link button button-outline">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="users-section">
+                <div class="section-header">
+                    <h1>User management</h1>
+                    <button class="button button-primary" id="show-create-user-modal">Create new user</button>
+                </div>
+
+                <div class="user-list-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>adminuser</td>
+                                <td>admin@example.com</td>
+                                <td><span class="user-role admin">admin</span></td>
+                                <td>
+                                    <a href="user-details.html?id=1" class="button button-icon" aria-label="view user"><i class="icon-eye"></i> view</a>
+                                    <a href="edit-user.html?id=1" class="button button-icon" aria-label="edit user"><i class="icon-edit"></i> edit</a>
+                                    <button class="button button-icon button-danger" aria-label="delete user"><i class="icon-delete"></i> delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>regularjoe</td>
+                                <td>joe@example.com</td>
+                                <td><span class="user-role regular">regular</span></td>
+                                <td>
+                                    <a href="user-details.html?id=2" class="button button-icon" aria-label="view user"><i class="icon-eye"></i> view</a>
+                                    <a href="edit-user.html?id=2" class="button button-icon" aria-label="edit user"><i class="icon-edit"></i> edit</a>
+                                    <button class="button button-icon button-danger" aria-label="delete user"><i class="icon-delete"></i> delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>metalhead</td>
+                                <td>metalhead@example.com</td>
+                                <td><span class="user-role regular">regular</span></td>
+                                <td>
+                                    <a href="user-details.html?id=3" class="button button-icon" aria-label="view user"><i class="icon-eye"></i> view</a>
+                                    <a href="edit-user.html?id=3" class="button button-icon" aria-label="edit user"><i class="icon-edit"></i> edit</a>
+                                    <button class="button button-icon button-danger" aria-label="delete user"><i class="icon-delete"></i> delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>popfan</td>
+                                <td>popfan@example.com</td>
+                                <td><span class="user-role regular">regular</span></td>
+                                <td>
+                                    <a href="user-details.html?id=4" class="button button-icon" aria-label="view user"><i class="icon-eye"></i> view</a>
+                                    <a href="edit-user.html?id=4" class="button button-icon" aria-label="edit user"><i class="icon-edit"></i> edit</a>
+                                    <button class="button button-icon button-danger" aria-label="delete user"><i class="icon-delete"></i> delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>rapguru</td>
+                                <td>rapguru@example.com</td>
+                                <td><span class="user-role admin">admin</span></td>
+                                <td>
+                                    <a href="user-details.html?id=5" class="button button-icon" aria-label="view user"><i class="icon-eye"></i> view</a>
+                                    <a href="edit-user.html?id=5" class="button button-icon" aria-label="edit user"><i class="icon-edit"></i> edit</a>
+                                    <button class="button button-icon button-danger" aria-label="delete user"><i class="icon-delete"></i> delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="create-user-modal" class="modal" aria-labelledby="create-user-title" role="dialog" aria-modal="true">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h2 id="create-user-title">Create new user</h2>
+                        <button class="modal-close-button" aria-label="close create user dialog">×</button>
+                    </header>
+                    <form action="#" method="post" class="create-user-form">
+                        <div class="form-group">
+                            <label for="new-username">Username</label>
+                            <input type="text" id="new-username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">Password</label>
+                            <input type="password" id="new-password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-confirm-password">Confirm password</label>
+                            <input type="password" id="new-confirm-password" name="confirm_password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-user-role">Role</label>
+                            <select id="new-user-role" name="role" required>
+                                <option value="regular">Regular</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="button button-primary">OK</button>
+                            <button type="button" class="button button-secondary modal-cancel-button">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <div class="notification notification-error" style="display: none;">
+                <p><strong>error:</strong> Could not complete the action. an unknown error occurred.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Music Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

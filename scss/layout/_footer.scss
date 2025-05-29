@@ -1,0 +1,46 @@
+// src/scss/layout/_footer.scss
+@use '../abstracts/variables' as var;
+
+.site-footer {
+  background-color: var.$background-dark-secondary; // Same as header or slightly different
+  color: var.$text-muted;
+  padding: var.$spacing-lg 0;
+  margin-top: var.$spacing-xl; // Space above the footer
+  border-top: 1px solid var.$border-color;
+  font-size: 0.9rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: var.$breakpoint-sm) { // Use defined breakpoint
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  p {
+    margin-bottom: var.$spacing-sm;
+
+    @media (min-width: var.$breakpoint-sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer-nav {
+    a {
+      color: var.$text-muted;
+      text-decoration: none;
+      margin: 0 var.$spacing-xs;
+      transition: color var.$transition-speed-fast;
+
+      &:hover {
+        color: var.$accent-purple-light;
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+// src/scss/pages/_login.scss
+@use '../abstracts/variables' as var;
+
+// The .auth-form class in _forms.scss covers most styling.
+// Add login-page specific overrides or additional styles here if needed.
+
+.login-page-container { // Optional wrapper for login page
+  min-height: calc(100vh - #{var.$spacing-lg * 2}); // Full viewport height minus potential header/footer
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Vertically center the form
+  padding: var.$spacing-lg 0;
+
+  .site-header, .site-footer {
+    // Simpler header/footer for auth pages if desired
+    // Example: remove main nav from header on login page
+  }
+
+  .auth-form {
+    // margin-top: 0; // Adjust margin if centered differently
+    // margin-bottom: 0;
+  }
+
+  .auth-form-title {
+    text-align: center;
+    color: var.$accent-purple-light;
+    font-size: 2rem;
+    margin-bottom: var.$spacing-lg;
+  }
+
+  .alternative-action-link { // For "Don't have an account? Sign up"
+    text-align: center;
+    margin-top: var.$spacing-md;
+    a {
+      color: var.$accent-purple-light;
+      font-weight: 500;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

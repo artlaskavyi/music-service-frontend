@@ -1,0 +1,80 @@
+// src/scss/components/_notifications.scss
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+@use 'sass:color';
+
+.notification {
+  padding: var.$spacing-md;
+  margin-bottom: var.$spacing-md;
+  border-left-width: 5px;
+  border-left-style: solid;
+  border-radius: var.$base-border-radius;
+  background-color: var.$surface-color;
+  color: var.$text-light;
+  box-shadow: 0 2px 4px rgba(var.$primary-black, 0.2);
+  position: relative;
+
+  p {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  &.notification-error {
+    border-left-color: var.$error-color;
+    background-color: color.adjust(var.$error-color, $lightness: 35%); // Fix: Replaced lighten
+    color: color.adjust(var.$error-color, $lightness: -15%); // Fix: Replaced darken
+    strong {
+      color: color.adjust(var.$error-color, $lightness: -20%); // Fix: Replaced darken
+    }
+  }
+
+  &.notification-success {
+    border-left-color: var.$success-color;
+    background-color: color.adjust(var.$success-color, $lightness: 50%); // Fix: Replaced lighten
+    color: color.adjust(var.$success-color, $lightness: -20%); // Fix: Replaced darken
+    strong {
+      color: color.adjust(var.$success-color, $lightness: -25%); // Fix: Replaced darken
+    }
+  }
+
+  &.notification-warning {
+    border-left-color: var.$warning-color;
+    background-color: color.adjust(var.$warning-color, $lightness: 30%); // Fix: Replaced lighten
+    color: color.adjust(var.$warning-color, $lightness: -40%); // Fix: Replaced darken
+    strong {
+      color: color.adjust(var.$warning-color, $lightness: -45%); // Fix: Replaced darken
+    }
+  }
+
+  &.notification-info {
+    border-left-color: var.$accent-purple-light;
+  }
+
+  .validation-error-message {
+    display: block;
+    color: var.$error-color;
+    font-size: 0.875rem;
+    margin-top: var.$spacing-xs;
+    padding: var.$spacing-xs;
+    background-color: rgba(var.$error-color, 0.1);
+    border-radius: var.$base-border-radius;
+  }
+}
+
+.toast-notifications-container {
+  position: fixed;
+  top: var.$spacing-lg;
+  right: var.$spacing-lg;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: var.$spacing-sm;
+
+  .notification {
+    width: 320px;
+  }
+}

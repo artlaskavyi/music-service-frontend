@@ -1,0 +1,29 @@
+// scss/style.scss
+
+// Base Styles
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/base';
+
+// Layout
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/main-content';
+
+// Components
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/modals';
+@use 'components/cards';
+@use 'components/navigation';
+@use 'components/notifications';
+
+// Page-Specific Styles
+@use 'pages/login';
+@use 'pages/signup';
+@use 'pages/users';
+@use 'pages/user-details';
+@use 'pages/edit-user';
+@use 'pages/album-details';
+@use 'pages/artist-profile';
+@use 'pages/genre-explorer';

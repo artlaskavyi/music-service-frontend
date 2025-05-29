@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edit User Profile">
+    <title>Edit User - Music Service</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo-text">MusicService</a>
+            <nav class="main-navigation">
+                 <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="users.html" class="nav-link active">Users</a></li>
+                    <li><a href="/auth/logout" class="nav-link button button-outline">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <ol>
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="users.html">Users</a></li>
+                    <li class="breadcrumb-item"><a href="user-details.html?id=1">User details</a></li> <li class="breadcrumb-item active" aria-current="page">edit user</li>
+                </ol>
+            </nav>
+
+            <section class="edit-user-section section">
+                <div class="section-header">
+                    <h1>Edit user: adminuser</h1> </div>
+
+                <form action="#" method="post" class="edit-user-form">
+                    <div class="form-group">
+                        <label for="edit-username">Username</label>
+                        <input type="text" id="edit-username" name="username" value="adminuser" required>
+                        </div>
+
+                    <div class="form-group">
+                        <label for="edit-email">Email</label>
+                        <input type="email" id="edit-email" name="email" value="admin@example.com" required>
+                        </div>
+
+                    <div class="form-group">
+                        <label for="edit-user-role">Role</label>
+                        <select id="edit-user-role" name="role" required>
+                            <option value="regular">Regular</option>
+                            <option value="admin" selected>Admin</option> </select>
+                    </div>
+
+                    <fieldset class="password-change-fieldset">
+                        <legend>Change password (optional)</legend>
+                        <div class="form-group">
+                            <label for="edit-new-password">new password</label>
+                            <input type="password" id="edit-new-password" name="new_password" placeholder="leave blank to keep current password">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-confirm-password">confirm new password</label>
+                            <input type="password" id="edit-confirm-password" name="confirm_new_password" placeholder="confirm new password">
+                            </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="submit" class="button button-primary">save changes</button>
+                        <a href="user-details.html?id=1" class="button button-secondary">cancel</a> </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Music Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
