@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Login to Music Service">
     <title>Login - Music Service</title>
-    <link rel="stylesheet" href="dist/css/style.css">
+    <!-- <link rel="stylesheet" href="dist/css/style.css"> -->
+     <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> -->
+     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <div class="login-page-container">
@@ -17,23 +19,28 @@
 
         <main class="main-content">
             <div class="container">
-                <form action="/auth/login" method="POST" class="auth-form">
-                    <h1 class="auth-form-title">Login</h1>
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" required placeholder="Enter your username">
-                        </div>
+                <form class="auth-form">
+    <h1 class="auth-form-title">Login</h1>
 
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required placeholder="Enter your password">
-                        </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required placeholder="Enter your username">
+    </div>
 
-                    <div class="form-actions">
-                        <button type="submit" class="button button-primary">login</button>
-                    </div>
-                     <p class="alternative-action-link">Don't have an account? <a href="signup.html">Sign up here</a></p>
-                </form>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password">
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="button button-primary">login</button>
+    </div>
+
+    <p class="alternative-action-link">
+        Don't have an account? <a href="signup.html">Sign up here</a>
+    </p>
+</form>
+
             </div>
         </main>
 
@@ -43,5 +50,8 @@
             </div>
         </footer>
     </div>
+    <script type="module" src="js/login.js"></script>
+
 </body>
+
 </html>

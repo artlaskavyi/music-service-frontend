@@ -1,0 +1,153 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === VARIABLES === */
+:root {
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --surface-alt: #2c2c2c;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --primary: #03dac5;
+  --primary-dark: #00bfa5;
+  --error: #cf6679;
+  --border: #333;
+  --radius: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* === BODY === */
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* === CONTAINER === */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* === HEADER === */
+.site-header {
+  background-color: var(--surface);
+  padding: 1.25rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.logo-text {
+  color: var(--primary);
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* === MAIN === */
+.main-content {
+  margin-top: 2rem;
+}
+
+/* === FORM === */
+.auth-form {
+  background-color: var(--surface-alt);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+}
+
+.auth-form-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* === BUTTON === */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-primary {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
+.button-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* === ALT LINK === */
+.alternative-action-link {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.alternative-action-link a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.alternative-action-link a:hover {
+  text-decoration: underline;
+}
+
+/* === FOOTER === */
+.site-footer {
+  background-color: var(--surface);
+  text-align: center;
+  padding: 2rem 0 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+}

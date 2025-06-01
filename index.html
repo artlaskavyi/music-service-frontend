@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the Music Service">
-    <title>Home - Music Service</title>
+    <meta name="description" content="Music Service - Your Music, Your Way">
+    <title>Music Service</title>
     <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container">
             <div class="logo-container">
-                <a href="index.html" class="logo-text">MusicService</a>
+                <a href="#/home" class="logo-text">MusicService</a>
             </div>
             <nav class="main-navigation">
-                <ul>
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="genre-explorer.html" class="nav-link">Genres</a></li>
-                    <li><a href="artist-profile.html" class="nav-link">Artists</a></li>
-                    <li><a href="users.html" class="nav-link">Users</a></li>
-                    <li><a href="/auth/logout" class="nav-link button button-outline">Logout</a></li>
+                <ul id="nav-links-container">
                 </ul>
             </nav>
             <button class="menu-toggle" aria-label="toggle menu" aria-expanded="false">
@@ -30,39 +25,67 @@
         </div>
     </header>
 
-    <main class="main-content">
-    <div class="container">
-        <section class="welcome-section">
-            <h3>Welcome back, [Username]!</h3>
-            <h5>Discover new music, create playlists, and rate your favorite tracks.</h5>
-        </section>
-
-        <section class="hero-section">
-            <h1>Your music, your way</h1>
-            <div class="gif-container">
-                <img src="assets/gifs/mygif.webp" alt="Music GIF" id="musicGif">
-            </div>
-        </section>
-
-        <section class="search-section">
-            <h2>Search for Music</h2>
-            <form id="searchForm">
-                <input type="text" id="searchInput" name="query" placeholder="Search for albums, artists..." required>
-                <button type="submit" id="searchButton" class="button button-primary">Search</button>
-            </form>
-        </section>
-        </div>
+    <main id="app-content" class="main-content">
     </main>
 
     <footer class="site-footer">
         <div class="container">
             <p>© 2025 Music Service. All rights reserved.</p>
             <nav class="footer-nav">
-                <a href="#">About us</a>
-                <a href="#">Contact</a>
-                <a href="#">Privacy policy</a>
+                <a href="#/about">About us</a>
+                <a href="#/contact">Contact</a>
+                <a href="#/privacy">Privacy policy</a>
             </nav>
         </div>
     </footer>
+
+    <script>
+        window.pageRender = {};
+        window.utils = {
+            generateImagePath: function(type, name, extension = 'png') {
+                if (!name || typeof name !== 'string') {
+                    return `assets/images/placeholders/placeholder-${type}.${extension}`;
+                }
+                const kebabCaseName = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+                return `assets/images/${type}s/${kebabCaseName}.${extension}`;
+            },
+            placeholderArtist: 'assets/images/placeholders/placeholder-artist.png',
+            placeholderAlbum: 'assets/images/placeholders/placeholder-album.png'
+        };
+    </script>
+
+    <script src="js/components.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navigation.js"></script>
+
+    <script src="js/pages/notFoundPage.js"></script>
+    <script src="js/pages/loginPage.js"></script>
+    <script src="js/pages/signupPage.js"></script>
+    <script src="js/pages/homePage.js"></script>
+    <script src="js/pages/genreExplorerPage.js"></script>
+    <script src="js/pages/genreDetailsPage.js"></script>
+    <script src="js/pages/artistListPage.js"></script>
+    <script src="js/pages/artistDetailsPage.js"></script>
+    <script src="js/pages/albumDetailsPage.js"></script>
+    <script src="js/pages/usersPage.js"></script>
+    <script src="js/pages/userDetailsPage.js"></script>
+    <script src="js/pages/editUserPage.js"></script>
+    <script src="js/pages/createUserPage.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-navigation');
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                mainNav.classList.toggle('is-open');
+            });
+        }
+    </script>
 </body>
 </html>

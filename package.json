@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint js/*.js",
+    "lint:fix": "eslint js/*.js --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "sass": "^1.89.0"
+    "sass": "^1.89.0",
+    "eslint": "^8.57.0"
   }
 }
