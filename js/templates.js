@@ -119,14 +119,14 @@ window.templates = {
                         <h1>All Artists</h1>
                     </header>
                     <div id="artist-list-container" class="card-grid">
-                        ${artists.length > 0 ? artists.map(artist => window.components.artistCard(artist, false)).join('') : '<p>Loading artists...</p>'}
+                        ${artists.length > 0 ? artists.map(artist => window.components.artistCard(artist)).join('') : '<p>Loading artists...</p>'}
                     </div>
                 </section>
             </div>
         `;
     },
 
-    artistDetailsPage(artist, albums = []) {
+    artistDetailsPage(artist, albums = [], countryName = 'N/A') {
         if (!artist) return '<p>Artist not found.</p>';
         const artistImageUrl = window.utils.generateImagePath('artist', artist.artistName);
         return `
@@ -145,20 +145,15 @@ window.templates = {
                             <div class="artist-info-main">
                                 <h1 class="artist-name-large">${artist.artistName}</h1>
                                 <p class="artist-meta-info">
-                                    <span class="artist-origin">${artist.country ? artist.country.countryName : 'N/A'}</span> •
-                                    <span class="artist-active-years">Active since ${artist.formationYear || 'N/A'}</span> •
-                                    <span class="artist-main-genre">${artist.genres && artist.genres.length > 0 ? artist.genres.map(g => `<a href="#/genres/${g.genreId}">${g.genreName}</a>`).join(', ') : 'N/A'}</span>
+                                    <span class="artist-origin" id="artist-country-name">Country: ${countryName}</span> •
+                                    <span class="artist-active-years">Active since ${artist.yearOfCreation || 'N/A'}</span>
                                 </p>
                             </div>
                         </header>
-                        <section class="artist-bio">
-                            <h2>About ${artist.artistName}</h2>
-                            <p>${artist.biography || 'No biography available.'}</p>
-                        </section>
                         <section class="artist-discography">
                             <h2>Discography</h2>
                             <div class="card-grid">
-                                ${albums.length > 0 ? albums.map(album => window.components.albumCard(album)).join('') : '<p>No albums found for this artist.</p>'}
+                                ${albums.length > 0 ? albums.map(album => window.components.albumCard(album, artist.artistName)).join('') : '<p>No albums found for this artist.</p>'}
                             </div>
                         </section>
                     </section>
@@ -172,12 +167,14 @@ window.templates = {
         const { album, songs = [], genres = [] } = albumData;
         const artist = album.artist;
         const coverImageUrl = window.utils.generateImagePath('album', album.title);
+        const artistNameForCard = (artist && artist.artistName) ? artist.artistName : null;
+
         return `
             <div class="container">
                 <nav class="breadcrumbs" aria-label="breadcrumb">
                     <ol>
                         <li class="breadcrumb-item"><a href="#/home">Home</a></li>
-                        ${artist ? `<li class="breadcrumb-item"><a href="#/artists/${artist.artistId}">${artist.artistName}</a></li>` : ''}
+                        ${artistNameForCard ? `<li class="breadcrumb-item"><a href="#/artists/${album.artistId}">${artistNameForCard}</a></li>` : ''}
                         <li class="breadcrumb-item active" aria-current="page">${album.title}</li>
                     </ol>
                 </nav>
@@ -188,7 +185,7 @@ window.templates = {
                         </div>
                         <div class="album-info">
                             <h1 class="album-title">${album.title}</h1>
-                            ${artist ? `<h2 class="artist-name"><a href="#/artists/${artist.artistId}">${artist.artistName}</a></h2>` : '<h2 class="artist-name">Unknown Artist</h2>'}
+                            ${artistNameForCard ? `<h2 class="artist-name"><a href="#/artists/${album.artistId}">${artistNameForCard}</a></h2>` : '<h2 class="artist-name">Unknown Artist</h2>'}
                             <p class="album-meta">
                                 <span class="release-year">${album.releaseYear}</span> •
                                 <span class="genre-tags">${genres.map(g => `<a href="#/genres/${g.genreId}">${g.genreName}</a>`).join(', ')}</span> •
@@ -207,7 +204,7 @@ window.templates = {
                                 <li class="track-item">
                                     <span class="track-number">${index + 1}.</span>
                                     <span class="track-title">${song.title}</span>
-                                    <span class="track-duration">${song.duration || 'N/A'}</span>
+                                    <span class="track-duration">${song.songLength || 'N/A'}</span>
                                 </li>
                             `).join('')}
                         </ol>
